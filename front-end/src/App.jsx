@@ -9,7 +9,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8080"); // Use your WebSocket server URL
+    const ws = new WebSocket("https://huap-menti.onrender.com"); // Use your WebSocket server URL
     setSocket(ws);
 
     ws.onopen = () => console.log("WebSocket Connected");
