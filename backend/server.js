@@ -23,9 +23,12 @@ const getChatGPTResponse = async (question) => {
         model: "gpt-3.5-turbo", // Use latest available GPT model
         messages: [
           { role: "system", content: "You are a helpful assistant." },
-          { role: "user", content: question },
+          {
+            role: "user",
+            content: `You are an AI assistant responding to live audience queries in a panel discussion on AI and Technology. Your response will be displayed as-is, without modification or filtering. Your goal is to provide a direct, fact-based, and technically informed answer to each query. For each audience question, craft a response that: 1. Relies solely on factual information, technical knowledge, and established AI or technological principles. 2. Avoids personal opinions, subjective reasoning, or political bias. 3. Presents the most logical, unfiltered, and direct answer based on available knowledge. Maintain a neutral and professional tone while ensuring your answer is clear, concise, and informative. Now, respond to the following audience query: ${question}`,
+          },
         ],
-        max_tokens: 100,
+        max_tokens: 200,
       },
       {
         headers: {
