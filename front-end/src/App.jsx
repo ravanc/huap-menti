@@ -27,12 +27,18 @@ function App() {
     }
   };
 
+  const noChatGptQuestion = (questionText) => {
+    if (socket && socket.readyState === WebSocket.OPEN) {
+      socket.send(JSON.stringify({ text: questionText, noChatGpt: true }));
+    }
+  };
+
   return (
     <div className="h-screen w-screen flex flex-col">
       <div className="bg-[#912927] p-4 pl-6 flex items-center w-full">
         <img src={logo} alt="HUAP Logo" className="h-12 w-auto mr-3" />
         <div className="text-[#F1E9D8] text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">
-          Panel 3: Disrupting the Status Quo: Technology’s Role in an Uncertain
+          Panel 2: Disrupting the Status Quo: Technology’s Role in an Uncertain
           Future
         </div>
         <Button
